@@ -1,7 +1,7 @@
 kind: Job
 apiVersion: batch/v1
 metadata:
-  generateName: gepardec-sso-keycloak-config-importer #dynamic
+  generateName: kc-config-importer- #dynamic
   labels:
     app: gepardec-sso #dynamic
   annotations:
