@@ -1,0 +1,96 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: gepardec-sso-config
+data:
+  01_gepardec.yaml: >+
+    realm: gepardec
+    enabled: true
+    identityProviders:
+    - enabled: true
+      alias: 'google'
+      providerId: 'google'
+      updateProfileFirstLoginMode: 'on'
+      trustEmail: true
+      storeToken: false
+      addReadTokenRoleOnCreate: false
+      authenticateByDefault: false
+      linkOnly: false
+      firstBrokerLoginFlowAlias: 'first broker login'
+      config:
+        onlineAccess: 'false'
+        userIp: 'false'
+        clientId: '$(env:CLIENT_ID)'
+        clientSecret: '$(env:CLIENT_SECRET)'
+        hostedDomain: "gepardec.com"
+        syncMode: FORCE
+    
+    identityProviderMappers:
+    - name: "picture"
+      identityProviderAlias: "google"
+      identityProviderMapper: "google-user-attribute-mapper"
+      config:
+        claims: "[]"
+        syncMode: "INHERIT"
+        attributes: "[]"
+        jsonField: "picture"
+        userAttribute: "picture"
+
+    smtpServer:
+      starttls: "false"
+      auth: ""
+      port: "465"
+      host: "smtp.gmail.com"
+      replyTo: ""
+      from: "service@gepardec.com"
+      fromDisplayName: ""
+      envelopeFrom: ""
+      ssl: "true"
+
+    roles:
+      realm:
+      - name: admin-role-gepardec-realm
+        description: 'Administrator role for managing the realm gepardec'
+        composite: true
+        composites:
+          client:
+            realm-management:
+            - manage-authorization
+            - view-events
+            - view-clients
+            - query-realms
+            - view-authorization
+            - query-users
+            - view-users
+            - manage-identity-providers
+            - view-realm
+            - manage-events
+            - view-identity-providers
+            - create-client
+            - query-groups
+            - manage-clients
+            - manage-users
+            - impersonation
+            - manage-realm
+            - query-clients
+        clientRole: false
+      - name: client-admin-gepardec-realm
+        description: 'Administrator role for managing clients in the realm gepardec'
+        composite: true
+        composites:
+          client:
+            realm-management:
+            - create-client
+            - manage-clients
+            - view-clients
+        clientRole: false
+
+    users:
+      - username: client-admin-gepardec
+        enabled: true
+        realmRoles:
+          - "client-admin-gepardec-realm"
+      - username: admin-gepardec
+        enabled: true
+        realmRoles:
+          - "admin-role-gepardec-realm"
