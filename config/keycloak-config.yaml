@@ -54,7 +54,7 @@ data:
         composite: true
         composites:
           client:
-            realm-management:
+            gepardec-realm:
             - manage-authorization
             - view-events
             - view-clients
@@ -79,7 +79,7 @@ data:
         composite: true
         composites:
           client:
-            realm-management:
+            gepardec-realm:
             - create-client
             - manage-clients
             - view-clients
