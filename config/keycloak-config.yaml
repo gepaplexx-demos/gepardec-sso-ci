@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: gepardec-sso-config
 data:
-  01_gepardec.yaml: >+
+  01_gepardec.yaml: |
     realm: gepardec
     enabled: true
     identityProviders:
