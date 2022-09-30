@@ -20,8 +20,8 @@ data:
       config:
         onlineAccess: 'false'
         userIp: 'false'
-        clientId: '$(properties:/config/secrets.properties::MEGA_CLIENT_ID)'
-        clientSecret: '$(properties:/config/secrets.properties::MEGA_CLIENT_SECRET)'
+        clientId: '$(properties:/secrets/secrets.properties::MEGA_CLIENT_ID)'
+        clientSecret: '$(properties:/secrets/secrets.properties::MEGA_CLIENT_SECRET)'
         hostedDomain: "gepardec.com"
         syncMode: FORCE
     
