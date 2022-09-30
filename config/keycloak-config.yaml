@@ -48,65 +48,67 @@ data:
       ssl: "true"
 
   01_gepardec_mega.yaml: |
-    clientId: mega
-    name: MEGA
-    description: ''
-    rootUrl: https://mega-frontend-feature-gepardec-sso.apps.play.gepaplexx.com
-    adminUrl: ''
-    baseUrl: ''
-    surrogateAuthRequired: false
-    enabled: true
-    alwaysDisplayInConsole: false
-    clientAuthenticatorType: client-secret
-    redirectUris:
-    - https://mega-frontend-feature-gepardec-sso.apps.play.gepaplexx.com
-    webOrigins:
-    - "+"
-    notBefore: 0
-    bearerOnly: false
-    consentRequired: false
-    standardFlowEnabled: true
-    implicitFlowEnabled: false
-    directAccessGrantsEnabled: false
-    serviceAccountsEnabled: false
-    publicClient: true
-    frontchannelLogout: true
-    protocol: openid-connect
-    attributes:
-      oidc.ciba.grant.enabled: 'false'
-      backchannel.logout.session.required: 'true'
-      post.logout.redirect.uris: "+"
-      display.on.consent.screen: 'false'
-      oauth2.device.authorization.grant.enabled: 'false'
-      backchannel.logout.revoke.offline.tokens: 'false'
-    authenticationFlowBindingOverrides: {}
-    fullScopeAllowed: true
-    nodeReRegistrationTimeout: -1
-    protocolMappers:
-    - name: audience
-      protocol: openid-connect
-      protocolMapper: oidc-audience-mapper
+    realm: gepardec
+    clients:
+    - clientId: mega
+      name: MEGA
+      description: ''
+      rootUrl: https://mega-frontend-feature-gepardec-sso.apps.play.gepaplexx.com
+      adminUrl: ''
+      baseUrl: ''
+      surrogateAuthRequired: false
+      enabled: true
+      alwaysDisplayInConsole: false
+      clientAuthenticatorType: client-secret
+      redirectUris:
+        - https://mega-frontend-feature-gepardec-sso.apps.play.gepaplexx.com
+      webOrigins:
+        - "+"
+      notBefore: 0
+      bearerOnly: false
       consentRequired: false
-      config:
-        included.client.audience: mega
-        id.token.claim: 'false'
-        access.token.claim: 'true'
-        userinfo.token.claim: 'false'
-    defaultClientScopes:
-    - profile
-    - microprofile-jwt
-    - email
-    optionalClientScopes:
-    - web-origins
-    - acr
-    - address
-    - phone
-    - offline_access
-    - roles
-    access:
-      view: true
-      configure: true
-      manage: true
+      standardFlowEnabled: true
+      implicitFlowEnabled: false
+      directAccessGrantsEnabled: false
+      serviceAccountsEnabled: false
+      publicClient: true
+      frontchannelLogout: true
+      protocol: openid-connect
+      attributes:
+        oidc.ciba.grant.enabled: 'false'
+        backchannel.logout.session.required: 'true'
+        post.logout.redirect.uris: "+"
+        display.on.consent.screen: 'false'
+        oauth2.device.authorization.grant.enabled: 'false'
+        backchannel.logout.revoke.offline.tokens: 'false'
+      authenticationFlowBindingOverrides: {}
+      fullScopeAllowed: true
+      nodeReRegistrationTimeout: -1
+      protocolMappers:
+        - name: audience
+          protocol: openid-connect
+          protocolMapper: oidc-audience-mapper
+          consentRequired: false
+          config:
+            included.client.audience: mega
+            id.token.claim: 'false'
+            access.token.claim: 'true'
+            userinfo.token.claim: 'false'
+      defaultClientScopes:
+        - profile
+        - microprofile-jwt
+        - email
+      optionalClientScopes:
+        - web-origins
+        - acr
+        - address
+        - phone
+        - offline_access
+        - roles
+      access:
+        view: true
+        configure: true
+        manage: true
 
   02_master.yaml: |
     realm: master
