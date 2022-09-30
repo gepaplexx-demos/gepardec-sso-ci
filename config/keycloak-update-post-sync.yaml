@@ -14,7 +14,7 @@ spec:
     metadata:
       labels:
         app: gepardec-sso #dynamic
-        job-name: keycloak-config-importer
+        # job-name: keycloak-config-importer
     spec:
       volumes:
         - name: config-data
