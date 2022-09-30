@@ -47,6 +47,8 @@ data:
       envelopeFrom: ""
       ssl: "true"
 
+  02_master.yaml: |
+    realm: master
     roles:
       realm:
       - name: admin-role-gepardec-realm
