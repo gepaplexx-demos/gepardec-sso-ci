@@ -1,0 +1,12 @@
+keycloak:
+  ingress:
+    hostname: gepardec-sso.apps.play.gepaplexx.com
+  provider:
+    openshift:
+      enabled: false
+  features:
+    disabled: ""
+
+  persistence:
+    auth:
+      password: "AgCyztHXw58BMr3izFkXCZZo2HyUCxEIrgjgNQXALNl36usbMgzUS412DoopqH3PCcsZNO2++lqGDtIJX5/qn6vXjjVwnBumNv75qlXwpeE6Vm07ML4ZxppNkoF0k8aWvxIUPnfHpFgFMwgyVGaxNWv5pScNKpfTWZtMYmBj8LEKhzLWt0Hd8qOS80j+W7F+nPXWb4LOOR8v47rhhrEqnAFUIKr9vKWH+ywjmaY/FvDozJeYoJBOJe+RVonxnOaMlwpYVzOrcPWsyz/jwvT6LWs0ZBbf5gn0hvQVtTTDm1kRv7VcLm6fMUowbUf94NnBMkHfwsm5y8jCAy+z7l+oI++9x6LGKE1yvIqIpyORxOq1uVFJICMPOqi8ADMc2vb1k2uXwBDrRIn8NMG7VJ0IKNOYWEm/x4z5Xw6rLFw+xP6GDKyzuJYPU/V2NM99QXjUwvgbrziC9LYlJYOkLt2CvBSYHnHJmC/SQYP+jPBMaOkg+IsFEh+Pe1Ojz8zgB2fpMmIyf4kDcAi+Rua8vpX+glzuPrY093CguNb89xHmhELfUNJzzeCXfenltdFdKPRRDbtjR1ukpq644tftvWnSaaE7rU8UQgPgdfuiLjbHo1jKAoIJPOd4I0WMGwMlxZrLGy4rpjtMGE/Sjgfyxc2At4u+gD2V95o7YQuTKaXmpQHJ1Ujt1odrX1cBuTrns00PJs7dDx+//lpCXg=="
