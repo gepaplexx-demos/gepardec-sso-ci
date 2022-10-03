@@ -1,6 +1,0 @@
-dependencies:
-- name: gp-keycloak-instance
-  repository: https://docs.gepaplexx.com/gp-helm-charts/
-  version: 0.1.2
-digest: sha256:4ce1e1eac86e565c95f63aa28ec4e2780597b39a5ab96a8e84f6c24820403be7
-generated: "2022-09-30T13:11:30.068961+02:00"

@@ -1,6 +1,6 @@
 keycloak:
   ingress:
-    hostname: gepardec-sso.apps.play.gepaplexx.com
+    hostname: gepardec-sso-dev.apps.play.gepaplexx.com
   provider:
     openshift:
       enabled: false
