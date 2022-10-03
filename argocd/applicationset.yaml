@@ -24,11 +24,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: gepardec-sso
+  namespace: gepaplexx-cicd-tools
   labels:
     owner: gepaplexx
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  namespace: gepaplexx-cicd-tools
 spec:
   generators:
     - list:
