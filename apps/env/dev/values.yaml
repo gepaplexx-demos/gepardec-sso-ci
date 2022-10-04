@@ -10,3 +10,9 @@ keycloak:
   persistence:
     auth:
       password: "AgB/bh8Qs70IeFKgvgOnVb9RiybCGZ6WN27+feyRoPteDnr0eUoz5oDtYoILHUzPjir58Ejs8KjPmQBHkfmdd9mbcbDWEv8jUtOAVyhlhptV/CUGfOau3yZj6XX4fexNfsT5cZrYEGw4VRVhtFvQYade2UnqfxU5L3IGlY7XHkaekRsWi5qPy1Uory3LNTHuph/kCVIPgRhV44dUpPOIZtVjp6D+P4jhzxuEGtyPVZTLi+qpCF49U0U1g+s7PSnHSvwN5jikzVKfXY6MCHjczOYl+h1S1H+eNa7BZh1FH1gy5+Qok6z5XxwXOjgRliZp5cDN0X+IGYn/dG9FJuhgK2affLcVWDa1Dl3MZuKDeSmUCViSUi6sWH3b4nNX4dNKtw6AXinqwfkAsWaCH+P5B030hxEgQy1kJ8cWJIn9UeZWoq5cTkLbGpS6Z7q08ZSMlWbwgn+OonOPiIyE21xcV5b0QPixivFuZ+igy32q5c7YERhjHLUFkZQxxaamCahT/WT9wqRa8FpJZadpjRjlzn0DIF4g0yCUNKIwSfQ/KKvXjjPOr7zrFZ16i5rr4sIv3if0YoB+NoiHkWfU/Oh2h+hWY3j88fFzOvKPiUuVI6Dno61Y8fhxWoghJQeoJNCgemueoVUiyR2Jk5t7+xl6zJUQcccS0HQZAsh2mT5cAOYGdlUpsSXXy9pki/EaTguRduwXAoBgCfGtBA=="
+db:
+  backup:
+    name: sso-db-backup
+    schedule: '*/3 * * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8
