@@ -14,6 +14,6 @@ keycloak:
 db:
   backup:
     name: sso-db-backup
-    schedule: '*/3 * * * *'
+    schedule: '*/2 * * * *'
     retain:
       days: 8 # need to +1, so 7 days = 8
