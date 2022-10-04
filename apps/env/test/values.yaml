@@ -10,9 +10,9 @@ keycloak:
   persistence:
     auth:
       password: "AgBkKAXlaOwhAQBheNFDn4XwDsIcFqaSvry4c9uGYDWTtBzqNrb5ZtuWVDrPwTgNIpTgHloC+MVqtsWvGtYShWbdF9iDVjCsWwQUyiSpoQdzPIXe6frZaIbYVr9jPdwqQXIIkrvcOvDpZCUP7qGoN3uq17buoITIap+7GarOShdoa81zPvQ8veTVBXXaPnMtzMw8ri3+Te0yiA9Udhn6gTGTqhtlsNS2BcnsMZxPvD6yE6C4WGZW0ZyFu7hJUwgkxSyxPKrKZ5HOz1Eps2FFB/7ot4YZ8FgGDlOFSoE2YYtU+0+PASUWXJAYL6vnA3VgI2YI17fG52ETlHh2VLi/kLN0PH6/hJu23mpYDRCl9SEIZWjN1AbJVJEzaS0VfQ96tCugiQzB3RkrU0I54LgFVbA1vZOqS0tJWTWBk3eBSSiq1jZBsbaHMUghgt7G0jB17dNKpmOYOK9iECMcBVdwzUepyEgMUCz3XEVXMSx5GDErWpwwvhG7sAEICakVrdfv8HM8MM21j5WEoxfPy+p6qQgguTcPD7MlFz2hN1Pbbfi/X+lfHFQkvfhiRH7GZOl0/AU8f2fh1KolA9Wwa3cY2Tc95fn1Ww57ViGAr0n6/Ub1EfNZmuYE/mq7UJi42p6VWQrY7d/bIp71UtGSlEfsO3kw0HkWVNpjNLhs27/J8I1eOUnAC9VJkcWcpYDykgQm0K6+JlyKeN4u2Q=="
-
-  postgresql:
-    image:
-      registry: docker.io
-      repository: bitnami/postgresql
-      tag: 14.4.0-debian-11-r23
+db:
+  backup:
+    name: sso-db-backup
+    schedule: '0 0 * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8
