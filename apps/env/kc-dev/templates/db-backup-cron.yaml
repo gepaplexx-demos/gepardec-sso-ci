@@ -29,25 +29,25 @@ spec:
                   cpu: "500m"
               env:
                 - name: "HOSTNAME"
-                  value: {{ .Values.keycloak.postgresql.fullnameOverride }}
+                  value: "{{ .Values.keycloak.postgresql.fullnameOverride }}"
                 - name: "PORT"
-                  value: {{ .Values.keycloak.postgresql.service.ports.postgresql }}
+                  value: "{{ .Values.keycloak.postgresql.service.ports.postgresql }}"
                 - name: "DATABASE"
-                  value: {{ .Values.keycloak.postgresql.auth.database }}
+                  value: "{{ .Values.keycloak.postgresql.auth.database }}"
                 - name: "USER"
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.keycloak.postgresql.auth.existingSecret }}
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
                       key: username
                 - name: "USER_PASSWORD"
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.keycloak.postgresql.auth.existingSecret }}
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
                       key: password
                 - name: "PGPASSWORD"
                   valueFrom:
                     secretKeyRef:
-                      name: {{ .Values.keycloak.postgresql.auth.existingSecret }}
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
                       key: postgres-password
               volumeMounts:
                 - name: "backup-volume"
