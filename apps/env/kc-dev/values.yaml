@@ -1,4 +1,5 @@
 keycloak:
+  image: ghcr.io/gepaplexx-demos/gepardec-sso:latest
   ingress:
     hostname: gepardec-sso-kc-dev.apps.play.gepaplexx.com
   provider:
@@ -10,3 +11,9 @@ keycloak:
   persistence:
     auth:
       password: "AgAhtV5QPucclrRToNmC2x9cQPJC+EaSME9u7hsq4hgmDI2fwurx/VF6zgHsMkN6bCx4rxv1WRGVMnwrQW6cF9g3gkp4rZOgx593KhKlwSVFz3YQtpHQ+XtYJoew15swHFjKXF9vnr0KtUBgh7jrji/vOP61zDs5LYRytz3wh/rMdmSxp5t2nuUgGeYBd44bp4yszHth2UP2cuh21LwEcGB1Zhd6nxNPz2evprv/c9MonhMfxlYOwOvngLJIl2bvktQ31NDylFeV/4XX3NVOLnsgGSi8q8o6yYTMRa4xbhu+YwUEgehDwax4yUXWk6GeJClVanToG2jMeXfsTUBPOKSj9Q7/p5MoC3UP0wVaYPjaFVyHhMEAnjTgYXW7i4H0yqiOJlzpwRcWyku2gGoZ1nsLE8YNfsFXvoqgLdsuH4jIHc35ml8/IJjDhu7ViUDMrgL/HOlGHHWv4VL1JeohThIZznQD3Wm78NnNAvcuQWAe8qnvDyN7K+pWqN9zsXG4AeZ0OD8I+fBT2IrCAno3F6lDh78fjF/O9bkFS9TGgCzvHuOvQSQDOv/W5vBwSJuUHe+ufxUBGEVHfeOFUflhtcNTWnnX+qrM0KgGv5qbEQ8D1Z2OQDu3dzF6BLDl13nN2+JyL/spTeBkqQ804l0SRjIrEaeJw671w92ZbuN1P7K81R1BAuldbm6tg6fa6Bt3qTpDBR8d1HGbSQ=="
+db:
+  backup:
+    name: sso-db-backup
+    schedule: '*/3 * * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8
