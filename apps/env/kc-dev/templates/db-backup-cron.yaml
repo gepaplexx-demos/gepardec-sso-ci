@@ -20,7 +20,7 @@ spec:
               args:
                 - export TIMESTAMP="`date "+%Y%m%d-%H%M%S"`"
                   && psql -h ${HOSTNAME} -p ${PORT} -U postgres -w -d postgres -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='${DATABASE}';"
-                  && PGPASSWORD="${USER_PASSWORD}" pg_dump -h ${HOSTNAME} -p ${PORT} -U ${USER} -w --format tar --file /backup/${NAMESPACE}-${TIMESTAMP}.tar.gz ${DATABASE}
+                  && PGPASSWORD="${USER_PASSWORD}" pg_dump -h ${HOSTNAME} -p ${PORT} -U ${USER} -w --format tar --file /backup/db-backup-${TIMESTAMP}.tar.gz ${DATABASE}
                   && cd /backup
                   && ls -r | tail -n +{{ .Values.db.backup.retain.days }} | xargs rm -f
               resources:
