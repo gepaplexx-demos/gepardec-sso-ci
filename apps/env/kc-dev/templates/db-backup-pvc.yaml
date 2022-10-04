@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ .Values.db.backup.name }}
+  name: '{{ .Values.keycloak.fullnameOverride }}-backup'
 spec:
   accessModes:
     - ReadWriteMany
