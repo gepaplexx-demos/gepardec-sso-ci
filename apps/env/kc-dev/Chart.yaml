@@ -13,4 +13,4 @@ dependencies:
   - name: gp-keycloak-instance
     alias: keycloak
     repository: https://docs.gepaplexx.com/gp-helm-charts/
-    version: ~0.2.0
+    version: ~0.3.0
