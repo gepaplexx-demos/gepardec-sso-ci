@@ -1,5 +1,4 @@
 keycloak:
-  replicas: 2
   fullnameOverride: gepardec-sso
   image: ghcr.io/gepaplexx-demos/gepardec-sso:19.0.2-gepardec-1.0.1
   ingress:
