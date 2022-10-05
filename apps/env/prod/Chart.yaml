@@ -1,0 +1,16 @@
+apiVersion: v2
+name: gepardec-sso
+description: A Helm chart for Kubernetes
+
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: gp-keycloak-operator
+    alias: keycloak-operator
+    repository: https://docs.gepaplexx.com/gp-helm-charts/
+    version: ~0.1.0
+  - name: gp-keycloak-instance
+    alias: keycloak
+    repository: https://docs.gepaplexx.com/gp-helm-charts/
+    version: ~0.2.0

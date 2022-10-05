@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: '{{ .Values.keycloak.fullnameOverride }}-backup'
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "10Gi"
+  volumeMode: Filesystem
+  storageClassName: rook-ceph-fs

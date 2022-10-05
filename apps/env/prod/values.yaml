@@ -1,0 +1,23 @@
+keycloak:
+  fullnameOverride: gepardec-sso
+  image: ghcr.io/gepaplexx-demos/gepardec-sso:19.0.2-gepardec-1.0.1
+  ingress:
+    hostname: gepardec-sso.apps.steppe.gepaplexx.com
+  provider:
+    openshift:
+      enabled: false
+  features:
+    disabled: ""
+
+  persistence:
+    auth:
+      password: "AgArHPch9XF+0fJkUZNRNGiTsEOiRrrjRhYteW5BG5vx1R0AMvB4qHuSXLnNeR9yEbzXbyQWZhB8oDIbozm/GJuWLxJoG0k6XvD/zKD2gomNs1Ck5JAQL/PTVdwzEs+EFGt2PBGL7EfbD1zOXVPJBD0cEKl0AqLiWGppAnNnnT5HxsPzCTyPczmwPE4P2qaiChOwZWAU/yonyNg3v/kdujTmhD7OR9AJF4nuL3nrdkLrjqUf21FDDThE/Wf/6G5BY8Aq7DDwdu6ELT9cQvCqiJZGkfDD1vVYnNg6UpG4PAHeZpToOmhrbxaDCro6rQKAW/Yjy9luLP1BtT7b6hAFV6m+02F6+c0hJ2OmyrKnWXwR6IvhuRQS3nGK0/7EWb7C/Dlc847feV4ly9zAh2jeJnnOiui08QP9Ob5ObE7StM0qV2cZDrzp7m2JIAPc+/Ps4u4j6v1qOOi8N8fodasJB7T8KB+eVeevoyhmJIecPytYfXR0PHMXXPUrRAAtG0I7PseYkHB+sIrCf+VZdJRb8DhNM093+dfOkYN/HOP1yH23L4l/asOgc18lWpOadRPThKp2A4mpzwQeFuOggeF9hO0nRNL6kxMsRJGLXwHxTR6gtlLd2LEuOfNxXqVYZtzJv1PGnaY1Afu1NAYHF/S6x+yicEviwUQ2JkGhoSfEZQrQa4MFKs8yBlTBgMfL51MBIWKkTfOvyWEmBbEoUf7RL/dqTevJldoLMlWCsGIf"
+  postgresql:
+    fullnameOverride: &dbName "gepardec-sso-db"
+    auth:
+      existingSecret: *dbName
+db:
+  backup:
+    schedule: '0 0 * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8

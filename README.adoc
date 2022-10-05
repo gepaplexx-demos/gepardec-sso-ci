@@ -1,0 +1,16 @@
+= Gepardec SSO CI
+
+== Sealed Secret for the database
+
+The values.yaml onfiguration key `persistence.auth.password`is a sealed password, which can be generated via the following command.
+
+[source, bash]
+----
+oc create secret generic gepardec-sso-db \ 
+   --from-literal password=$(openssl rand -base64 20) \
+   --from-literal postgres-password=$(openssl rand -base64 20) \
+   -n gepardec-sso-test \
+   --dry-run -o yaml | kubeseal --cert <PATH_TO_PUBLIC_KEY> -o yaml
+----
+
+IMPORTANT: The secret name `gepardec-sso-db` must be the name defined in the values.yaml with the key `keycloak.postgresql.existingSecret` and the namespace must be namespace the secret is used by.

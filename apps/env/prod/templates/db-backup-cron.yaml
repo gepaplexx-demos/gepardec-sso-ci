@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: '{{ .Values.keycloak.fullnameOverride }}-backup'
+spec:
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+  schedule: '{{ .Values.db.backup.schedule }}'
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        metadata:
+          labels:
+            app: "sso"
+        spec:
+          containers:
+            - name: "sso-db-backup"
+              image: docker.io/bitnami/postgresql:{{ .Values.keycloak.postgresql.image.tag }}
+              command: ["/bin/sh", "-c"]
+              args:
+                - export TIMESTAMP="`date '+%Y%m%d-%H%M%S'`"
+                  && export BACKUP_NAME="db-backup-${TIMESTAMP}.tar.gz"
+                  && cd /backup
+                  && psql -h ${HOSTNAME} -p ${PORT} -U postgres -w -d postgres -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='${DATABASE}';"
+                  && PGPASSWORD="${USER_PASSWORD}" pg_dump -h ${HOSTNAME} -p ${PORT} -U ${USER} -w --format tar --file ${BACKUP_NAME} ${DATABASE}
+                  && ln -sf ${BACKUP_NAME} latest
+                  && ls -r | tail -n +{{ .Values.db.backup.retain.days }} | xargs rm -f
+              resources:
+                limits:
+                  memory: "128Mi"
+                  cpu: "500m"
+              env:
+                - name: "HOSTNAME"
+                  value: "{{ .Values.keycloak.postgresql.fullnameOverride }}"
+                - name: "PORT"
+                  value: "{{ .Values.keycloak.postgresql.service.ports.postgresql }}"
+                - name: "DATABASE"
+                  value: "{{ .Values.keycloak.postgresql.auth.database }}"
+                - name: "USER"
+                  valueFrom:
+                    secretKeyRef:
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
+                      key: username
+                - name: "USER_PASSWORD"
+                  valueFrom:
+                    secretKeyRef:
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
+                      key: password
+                - name: "PGPASSWORD"
+                  valueFrom:
+                    secretKeyRef:
+                      name: "{{ .Values.keycloak.postgresql.auth.existingSecret }}"
+                      key: postgres-password
+              volumeMounts:
+                - name: "backup-volume"
+                  mountPath: /backup
+          volumes:
+            - name: "backup-volume"
+              persistentVolumeClaim:
+                claimName: '{{ .Values.keycloak.fullnameOverride }}-backup'
+          restartPolicy: Never
