@@ -1,6 +1,6 @@
 keycloak:
   fullnameOverride: gepardec-sso
-  image: ghcr.io/gepaplexx-demos/gepardec-sso:latest
+  image: ghcr.io/gepaplexx-demos/gepardec-sso:19.0.2-gepardec-1.0.1
   ingress:
     hostname: gepardec-sso-kc-dev.apps.play.gepaplexx.com
   provider:
