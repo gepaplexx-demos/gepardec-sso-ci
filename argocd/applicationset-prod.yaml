@@ -39,7 +39,7 @@ spec:
 
   template:
     metadata:
-      name: 'gepardec-sso-{{cluster}}'
+      name: 'gepardec-sso'
     spec:
       project: gepardec-sso
       syncPolicy:
@@ -57,4 +57,4 @@ spec:
         path: apps/env/{{ cluster }}
       destination:
         server: '{{url}}'
-        namespace: 'gepardec-sso-{{cluster}}'
+        namespace: 'gepardec-sso'
