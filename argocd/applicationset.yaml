@@ -33,9 +33,9 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: kc-dev
-            url: https://kubernetes.default.svc
-            branch: main
+          # - cluster: kc-dev
+          #   url: https://kubernetes.default.svc
+          #   branch: main
           - cluster: dev
             url: https://kubernetes.default.svc
             branch: dev
