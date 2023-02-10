@@ -23,6 +23,3 @@ keycloak:
       schedule: '0 0 * * *'
       retain:
         days: 8 # need to +1, so 7 days = 8
-keycloak-operator:
-  subscription:
-    channel: fast
