@@ -11,11 +11,11 @@ keycloak:
 
   persistence:
     auth:
-      password: "AgAZ1mOuQgImO92+PwIbovO3j7yhuCH/LJKW+a2Obu9FtL7xQ7xBTp4PVpZYxq+1sEt037EYIzjpXmMNQqA6+mPtF3E4xYHXHpySEcBiR/wwNN0F5aprgENxlY9Nfc8UsM4DGKh825vCLwWoRBLn/AWpXhXXYsTFQKntm+nCoLa4I6hfsYWr8tuHXOQFLInlVB+48cReHqgo/wa4DZxBJX6ij866ofs6lwQI7OJhW0I3dnQYRy/68gMdnLDdYTsuYegj356jfBAL2zwnnFrA4wH3GppRv4mUyz2Ag7Xpp4q1PCrjEvhrJtBdSS8cDbziHY04YkyhWGzH4aVzyeYwv7p2f8DAARZGJXGL8joCJpw36A9CV/6/ygo8RvvxjicORwzqXDWBQgCHplnFb1gMnYOwkvc5SlV2PKHxDKhYWG/EketzHGqi304k8/gNgdmxcBsZTskWWA5IULlZdPWkht/7rOrKc0rahQVK9yMpNebDak/B71PEsSelmx702/ex6sR/g1ND6gZcXq5HLVqsOvV8+ndb1ncvAHaSm6ep6SIIAzEPin3C+FW9V1cP8DolumJAjlmsY8wX+LsogtbCsBLZoblwOGBtHK22aIYIBD27aPwpS7s6qVzZHfSNa2cI1Jdxctq8lxWeNPZrD7njiwFvZb9dBrChSgwlVtw5ncoHGAInOsW0gJLiYpTz0/+XM+1ohviTaobM9A=="
+      password: "AgB3l70JUZRfKjVHN7aeIRJvEi4BST7q6k4BZLM+mrz941vVHFoQbECjvhbVFfDGZF9lIqUeCgViZ6yeyV9tofTnQ1wETF7+EhwYymxtnbVHCe2sNqMctIKx7ZDsjTbIgGjcmAWK9r/J9GXoua7kXbmjwlLXFEkIslod0HRnV98yRZMKOHMGRzX5RrQpj1eZzI9TLLKfHzED0/QN34vi8ZxH8H5oQj4MWjKdIBsier3mi2wjH3zhrFnFTriyP/YzB9kcn/wDoUncj3Iak4/iS1/M8qhdPVH4CBt0ZfFSQ9ZS2tTQsiBY5yiqxiYon9jdTD9tLiytv4pOadU6Cc/6U+XxXtRBg3lfbQg6wlM4lFetY39Lu8SyDeenZE+3djL/vV1/7BM6uCwiBjHs0xM5N8flN70mpesBhKiQ/B9493C4hZk3LCwc/pP2oIxSxvvDxVxiBH+uf8GEzZEAu1YcUkBgLLbJezjGUCpWSmptlqfkehVs9zzip3gDVnPBV23EDRcZAkaFnDpnwjR+RPiOboGG7Cpch7FDtGdcMBY+BxHVBYzLdYJFJzhJ7Y23WF6h5ibZa4Mf3nq+mtYvLCQBk0WHCDr1cdy9ha8hoh2DYpl9jkChRnS3B84nv4EAX26DfF26ZcDDsL6V9iLgW/vcGUkwzzOSTDxh+4mVbXXrzmmuoBpC9VcuRuusXAxGh1EwHMtaj5BxkpkRIA=="
   postgresql:
     fullnameOverride: &dbName "gepardec-sso-db"
     auth:
-      existingSecret: *dbName
+      existingSecret: keycloak-config
     backup:
       enabled: true
       # default values if backu is enabled
