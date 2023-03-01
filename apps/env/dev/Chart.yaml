@@ -9,8 +9,8 @@ dependencies:
   - name: gp-keycloak-operator
     alias: keycloak-operator
     repository: https://gepaplexx.github.io/gp-helm-charts
-    version: ~0.8.0
+    version: ~0.2.0
   - name: gp-keycloak-instance
     alias: keycloak
     repository: https://gepaplexx.github.io/gp-helm-charts
-    version: ~0.3.0
+    version: ~0.8.0
