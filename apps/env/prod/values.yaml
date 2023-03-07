@@ -15,7 +15,7 @@ keycloak:
   postgresql:
     fullnameOverride: &dbName "gepardec-sso-db"
     auth:
-      existingSecret: *dbName
+      existingSecret: keycloak-config
     backup:
       enabled: true
       # default values if backu is enabled
