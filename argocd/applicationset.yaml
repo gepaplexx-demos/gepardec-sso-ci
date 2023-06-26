@@ -17,12 +17,12 @@ spec:
           - cluster: dev
             url: https://kubernetes.default.svc
             branch: dev
-          - cluster: test
-            url: https://kubernetes.default.svc
-            branch: test
-          - cluster: prod
-            url: https://kubernetes.default.svc
-            branch: prod
+#          - cluster: test
+#            url: https://kubernetes.default.svc
+#            branch: test
+#          - cluster: prod
+#            url: https://kubernetes.default.svc
+#            branch: prod
 
   template:
     metadata:
