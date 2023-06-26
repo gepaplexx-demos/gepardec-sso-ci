@@ -1,25 +1,22 @@
+env: test
+
 keycloak:
   fullnameOverride: gepardec-sso
   image: ghcr.io/gepaplexx-demos/gepardec-sso:20.0.3-gepardec-1.0.0
   ingress:
-    hostname: gepardec-sso-test.apps.play.gepaplexx.com
+    hostname: gepardec-sso-test.play.run.gepardec.com
   provider:
     openshift:
       enabled: false
   features:
     disabled: ""
 
-  persistence:
-    auth:
-      password: "AgAZ1mOuQgImO92+PwIbovO3j7yhuCH/LJKW+a2Obu9FtL7xQ7xBTp4PVpZYxq+1sEt037EYIzjpXmMNQqA6+mPtF3E4xYHXHpySEcBiR/wwNN0F5aprgENxlY9Nfc8UsM4DGKh825vCLwWoRBLn/AWpXhXXYsTFQKntm+nCoLa4I6hfsYWr8tuHXOQFLInlVB+48cReHqgo/wa4DZxBJX6ij866ofs6lwQI7OJhW0I3dnQYRy/68gMdnLDdYTsuYegj356jfBAL2zwnnFrA4wH3GppRv4mUyz2Ag7Xpp4q1PCrjEvhrJtBdSS8cDbziHY04YkyhWGzH4aVzyeYwv7p2f8DAARZGJXGL8joCJpw36A9CV/6/ygo8RvvxjicORwzqXDWBQgCHplnFb1gMnYOwkvc5SlV2PKHxDKhYWG/EketzHGqi304k8/gNgdmxcBsZTskWWA5IULlZdPWkht/7rOrKc0rahQVK9yMpNebDak/B71PEsSelmx702/ex6sR/g1ND6gZcXq5HLVqsOvV8+ndb1ncvAHaSm6ep6SIIAzEPin3C+FW9V1cP8DolumJAjlmsY8wX+LsogtbCsBLZoblwOGBtHK22aIYIBD27aPwpS7s6qVzZHfSNa2cI1Jdxctq8lxWeNPZrD7njiwFvZb9dBrChSgwlVtw5ncoHGAInOsW0gJLiYpTz0/+XM+1ohviTaobM9A=="
   postgresql:
-    fullnameOverride: &dbName "gepardec-sso-db"
-    auth:
-      existingSecret: *dbName
+    fullnameOverride: "gepardec-sso-db"
     backup:
       enabled: true
       # default values if backu is enabled
-      size: 10Gi
+      size: 1Gi
       schedule: '0 0 * * *'
       retain:
         days: 8 # need to +1, so 7 days = 8
