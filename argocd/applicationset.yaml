@@ -1,26 +1,4 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: gepardec-sso
-  namespace: gepaplexx-cicd-tools
-  labels:
-    owner: gepaplexx
-spec:
-  description: ArgoCD Project to deploy a sample application to showcase our staging concept
-  # Allow manifests to deploy only from this repositories
-  sourceRepos:
-    - '*'
-  destinations:
-    - namespace: '*'
-      server: 'https://kubernetes.default.svc'
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: Namespace
-  # Enables namespace orphaned resource monitoring.
-  orphanedResources:
-    warn: true
----
-apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: gepardec-sso
@@ -42,6 +20,9 @@ spec:
           - cluster: test
             url: https://kubernetes.default.svc
             branch: test
+          - cluster: prod
+            url: https://kubernetes.default.svc
+            branch: prod
 
   template:
     metadata:
