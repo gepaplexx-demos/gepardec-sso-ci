@@ -42,6 +42,9 @@ spec:
           - cluster: test
             url: https://kubernetes.default.svc
             branch: test
+          - cluster: prod
+            url: https://kubernetes.default.svc
+            branch: prod
 
   template:
     metadata:
