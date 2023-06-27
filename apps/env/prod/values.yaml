@@ -1,6 +1,7 @@
 env: prod
 
 keycloak:
+  customerInstance: true
   fullnameOverride: gepardec-sso
   image: ghcr.io/gepaplexx-demos/gepardec-sso:20.0.3-gepardec-1.0.0
   ingress:
