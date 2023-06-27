@@ -6,6 +6,10 @@ type: application
 version: 0.2.0
 
 dependencies:
+  - name: gp-keycloak-operator
+    alias: keycloak-operator
+    repository: https://gepaplexx.github.io/gp-helm-charts
+    version: ~1.0.0
   - name: gp-keycloak-instance
     alias: keycloak
     repository: https://gepaplexx.github.io/gp-helm-charts
