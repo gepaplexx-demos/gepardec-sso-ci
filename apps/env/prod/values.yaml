@@ -12,12 +12,12 @@ keycloak:
   features:
     disabled: ""
 
-backup:
-  enabled: true
-  size: 1Gi
-  schedule: '0 0 * * *'
-  retain:
-    days: 8 # need to +1, so 7 days = 8
+  backup:
+    enabled: true
+    size: 1Gi
+    schedule: '0 0 * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8
 
-  postgresql:
-    fullnameOverride: "gepardec-sso-db"
+postgresql:
+  fullnameOverride: "gepardec-sso-db"
