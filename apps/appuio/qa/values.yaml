@@ -1,0 +1,23 @@
+env: qa
+
+keycloak:
+  customerInstance: true
+  fullnameOverride: gepardec-sso
+  image: ghcr.io/gepaplexx-demos/gepardec-sso:20.0.3-gepardec-1.0.0
+  ingress:
+    hostname: gepardec-sso-qa.play.run.gepardec.com
+  provider:
+    openshift:
+      enabled: false
+  features:
+    disabled: ""
+
+  backup:
+    enabled: true
+    size: 1Gi
+    schedule: '0 0 * * *'
+    retain:
+      days: 8 # need to +1, so 7 days = 8
+
+  postgresql:
+    fullnameOverride: "gepardec-sso-db"
