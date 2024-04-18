@@ -10,6 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - run: helm dependency build apps/appuio/qa/helm
+
       - name: 'Deploy'
         uses: 'vimeda/helm@v1.7.0'
         with:
