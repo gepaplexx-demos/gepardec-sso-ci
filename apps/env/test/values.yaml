@@ -21,3 +21,7 @@ keycloak:
 
   postgresql:
     fullnameOverride: "gepardec-sso-db"
+
+keycloak-operator:
+  subscription:
+    installPlanApproval: Automatic
