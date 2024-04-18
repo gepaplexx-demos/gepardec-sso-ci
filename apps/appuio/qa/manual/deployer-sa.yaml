@@ -54,6 +54,19 @@ rules:
       - 'route.openshift.io'
     resources:
       - routes/custom-host
+  - verbs:
+      - create
+      - delete
+      - deletecollection
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - 'batch'
+    resources:
+      - jobs
 
 
 
