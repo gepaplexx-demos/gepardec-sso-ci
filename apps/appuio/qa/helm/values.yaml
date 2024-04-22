@@ -71,10 +71,10 @@ postgresql:
     username: keycloak # don't override
     database: keycloak # don't override
     ###TODO find out why defining the secret keys like blow is not working
-    existingSecret: keycloak-config # don't override
-#    secretKeys:
-#      adminPasswordKey: "KC_DB_PASSWORD"
-#      userPasswordKey: "KC_DB_PASSWORD"
+    existingSecret: keycloak-secret # don't override
+    secretKeys:
+      adminPasswordKey: "KC_DB_PASSWORD"
+      userPasswordKey: "KC_DB_PASSWORD"
   primary:
     ## Disable security context is needed to run on OpenShift
     containerSecurityContext:
