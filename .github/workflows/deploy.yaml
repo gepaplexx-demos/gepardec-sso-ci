@@ -2,22 +2,31 @@ name: Deploy via Helm
 
 on:
   workflow_dispatch:
-
+    inputs:
+      environment:
+        type: choice
+        description: Select the environment
+        required: true
+        options:
+          - qa
+          - prod
 
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
+    environment: ${{ github.event.inputs.environment }}
     steps:
       - uses: actions/checkout@v1
 
-      - run: helm dependency build apps/appuio/qa/helm
+      #helm dependency build apps/appuio/qa/helm
+      - run: helm dependency build ${{ secrets.HELM_PATH }}
 
       - name: 'Deploy'
         uses: 'vimeda/helm@v1.7.0'
         with:
-          release: 'gepardec-sso-qa'
-          namespace: 'gepardec-sso-qa'
-          chart: 'apps/appuio/qa/helm'
+          release: ${{ secrets.NAME }}
+          namespace: ${{ secrets.NAME }}
+          chart: ${{ secrets.HELM_PATH }}
           token: '${{ github.token }}'
         env:
           KUBECONFIG_FILE: '${{ secrets.KUBE_CONFIG_QA }}'
