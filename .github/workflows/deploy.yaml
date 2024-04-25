@@ -16,6 +16,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     environment:
         name: ${{ inputs.environment }}
+        url: https://${{ vars.NAME }}.apps.cloudscale-lpg-2.appuio.cloud
     steps:
       - uses: actions/checkout@v1
 
