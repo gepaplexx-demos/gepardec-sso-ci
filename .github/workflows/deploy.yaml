@@ -36,6 +36,8 @@ jobs:
     needs: deployment
     runs-on: ubuntu-latest
     steps:
+        #This steps needs a GitHub Personal Access Token (PAT) from a user with write access to the repository
+        #The PAT currently used is issued to the user tomeindl. If this step fails because of permissions then create a new PAT in Settings
         - name: Trigger Workflow in gepardec-sso-config-ci
           run: |
             # Set the required variables
