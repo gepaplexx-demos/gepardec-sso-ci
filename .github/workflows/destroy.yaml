@@ -5,12 +5,12 @@ on:
 
 
 jobs:
-  deployment:
+  destroyment:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v1
 
-      - name: 'Deploy'
+      - name: 'Destroy'
         uses: 'vimeda/helm@v1.7.0'
         with:
           task: 'remove'
