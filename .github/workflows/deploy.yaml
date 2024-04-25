@@ -22,6 +22,7 @@ jobs:
         env:
           KUBECONFIG_FILE: '${{ secrets.KUBE_CONFIG_QA }}'
   trigger-cli:
+    needs: deployment
     runs-on: ubuntu-latest
     steps:
         - name: Trigger Workflow in gepardec-sso-config-ci
