@@ -14,7 +14,8 @@ on:
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
-    environment: ${{ inputs.environment }}
+    environment:
+        name: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v1
 
