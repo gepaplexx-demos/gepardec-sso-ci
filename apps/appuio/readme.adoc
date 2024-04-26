@@ -1,0 +1,16 @@
+The folders in this directory contain the helm charts and kubernetes
+resources for deploying gepardec-sso into the respective environments.
+
+== Deployment in the Appuoi Cloud
+For deployment in the Appuio Cloud some manual steps need to be taken
+before the helm charts can be deployed via GitHub actions.
+
+1. Create a new namespace in the Appuio Cloud
+2. Manually create a secret in the namespace, use the secret.yaml as a template
+3. Apply the deployer-sa.yaml to the namespace, this will add a role and role binding for the deployer service account
+4. Obtain the token of the deployer service account and create a kubeconfig file with it. Use the config.yaml as a template.
+   Save the kubeconfig file as a secret in GitHub.
+
+If a namespace contains the secret and the modifications to the service account and the Secret is configured in GitHub
+the GitHub actions can be run.
+
