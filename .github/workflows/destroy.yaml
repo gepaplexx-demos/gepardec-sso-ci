@@ -14,9 +14,9 @@ jobs:
         uses: 'vimeda/helm@v1.7.0'
         with:
           task: 'remove'
-          release: 'gepardec-sso-qa'
-          namespace: 'gepardec-sso-qa'
-          chart: 'apps/appuio/qa'
+          release: ${{ vars.NAME }}
+          namespace: ${{ vars.NAME }}
+          chart: ${{ vars.HELM_PATH }}
           token: '${{ github.token }}'
         env:
-          KUBECONFIG_FILE: '${{ secrets.KUBE_CONFIG_QA }}'
+          KUBECONFIG_FILE: '${{ secrets.KUBE_CONFIG }}'
