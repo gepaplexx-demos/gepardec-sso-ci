@@ -2,6 +2,14 @@ name: Destroy via Helm
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Select the environment
+        required: true
+        options:
+          - qa
+          - prod
 
 
 jobs:
