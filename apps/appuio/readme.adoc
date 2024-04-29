@@ -1,7 +1,7 @@
 The folders in this directory contain the helm charts and kubernetes
 resources for deploying gepardec-sso into the respective environments.
 
-== Deployment in the Appuoi Cloud
+== Deployment in the Appuio Cloud
 For deployment in the Appuio Cloud some manual steps need to be taken
 before the helm charts can be deployed via GitHub actions.
 
