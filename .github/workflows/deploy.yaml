@@ -43,7 +43,7 @@ jobs:
             # Set the required variables
             repo_owner="gepaplexx-demos" 
             repo_name="gepardec-sso-config-ci"  
-            event_type="trigger-workflow-qa" 
+            event_type="trigger-workflow-${{ inputs.environment }}" 
             
             curl -L \
               -X POST \
