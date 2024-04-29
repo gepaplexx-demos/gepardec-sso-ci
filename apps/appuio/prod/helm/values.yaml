@@ -16,7 +16,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 route:
-  host: gepardec-sso-qa.apps.cloudscale-lpg-2.appuio.cloud
+  host: gepardec-sso-prod.apps.cloudscale-lpg-2.appuio.cloud
 
 serviceAccount:
   # Specifies whether a service account should be created

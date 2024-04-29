@@ -6,13 +6,13 @@ clusters:
 contexts:
   - context:
       cluster: api-cloudscale-lpg-2-appuio-cloud:6443
-      namespace: gepardec-sso-qa
-      user: system:serviceaccount:gepardec-sso-qa:deployer/api-cloudscale-lpg-2-appuio-cloud:6443
-    name: QA
-current-context: QA
+      namespace: gepardec-sso-prod
+      user: system:serviceaccount:gepardec-sso-prod:deployer/api-cloudscale-lpg-2-appuio-cloud:6443
+    name: PROD
+current-context: PROD
 kind: Config
 preferences: {}
 users:
-  - name: system:serviceaccount:gepardec-sso-qa:deployer/api-cloudscale-lpg-2-appuio-cloud:6443
+  - name: system:serviceaccount:gepardec-sso-prod:deployer/api-cloudscale-lpg-2-appuio-cloud:6443
     user:
       token: --secret--
