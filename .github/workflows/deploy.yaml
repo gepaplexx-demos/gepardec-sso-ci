@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      #helm dependency build apps/appuio/qa/helm
+      #HELM_PATH contains path to helm chart, for qa: apps/appuio/qa/helm
       - run: helm dependency build ${{ vars.HELM_PATH }}
 
       - name: 'Deploy'
