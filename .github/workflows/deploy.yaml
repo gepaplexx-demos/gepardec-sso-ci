@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      #helm dependency build apps/appuio/qa/helm
+      #HELM_PATH contains path to helm chart, for qa: apps/appuio/qa/helm
       - run: helm dependency build ${{ vars.HELM_PATH }}
 
       - name: 'Deploy'
@@ -43,7 +43,7 @@ jobs:
             # Set the required variables
             repo_owner="gepaplexx-demos" 
             repo_name="gepardec-sso-config-ci"  
-            event_type="trigger-workflow-qa" 
+            event_type="trigger-workflow-${{ inputs.environment }}" 
             
             curl -L \
               -X POST \

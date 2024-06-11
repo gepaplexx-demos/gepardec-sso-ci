@@ -1,0 +1,85 @@
+# Default values for gepardec-sso
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+image:
+  repository: ghcr.io/gepaplexx-demos/gepardec-sso
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets:
+  - name: gepardec-sso-dockercfg
+
+nameOverride: ""
+fullnameOverride: ""
+
+route:
+  host: gepardec-sso-prod.apps.cloudscale-lpg-2.appuio.cloud
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 1
+    memory: 1Gi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+postgresql:
+  fullnameOverride: postgresql-keycloak
+  service:
+    ports:
+      postgresql: 5432
+  auth:
+    username: keycloak # don't override
+    database: keycloak # don't override
+    existingSecret: keycloak-secret # don't override
+    secretKeys:
+      adminPasswordKey: "KC_DB_PASSWORD"
+      userPasswordKey: "KC_DB_PASSWORD"
+  primary:
+    ## Disable security context is needed to run on OpenShift
+    containerSecurityContext:
+      enabled: false
+    podSecurityContext:
+      enabled: false
+    persistence:
+      storageClass: "ssd"
+      size: 1Gi
