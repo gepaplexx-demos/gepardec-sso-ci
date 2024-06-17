@@ -13,6 +13,6 @@ spec:
   port:
     targetPort: http
   tls:
-    termination: edge
+    termination: reencrypt
   wildcardPolicy: None
 
