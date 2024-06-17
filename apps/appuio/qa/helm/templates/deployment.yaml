@@ -60,8 +60,8 @@ spec:
           readinessProbe:
             httpGet:
               path: /health/ready
-              port: http
-              scheme: HTTP
+              port: https
+              scheme: HTTPS
             timeoutSeconds: 1
             periodSeconds: 3
             successThreshold: 1
@@ -69,8 +69,8 @@ spec:
           livenessProbe:
             httpGet:
               path: /health/live
-              port: http
-              scheme: HTTP
+              port: https
+              scheme: HTTPS
             timeoutSeconds: 1
             periodSeconds: 10
             successThreshold: 1
@@ -78,8 +78,8 @@ spec:
           startupProbe:
             httpGet:
               path: /health/live
-              port: http
-              scheme: HTTP
+              port: https
+              scheme: HTTPS
             timeoutSeconds: 1
             periodSeconds: 10
             failureThreshold: 10
