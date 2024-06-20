@@ -33,7 +33,7 @@ spec:
       volumes:
         - name: certs-secret
           secret:
-            secretName: {{ include "gepardec-sso.fullname" . }}
+            secretName: kc-certs
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
