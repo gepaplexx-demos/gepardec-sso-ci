@@ -15,5 +15,26 @@ spec:
   tls:
     termination: reencrypt
     insecureEdgeTerminationPolicy: Allow
+    destinationCACertificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIDUTCCAjmgAwIBAgIIGmvDHzzIOoowDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE
+      Awwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTYzNzY3MjAyNjAe
+      Fw0yNDAxMjIxMjU0MzNaFw0yNjAzMjIxMjU0MzRaMDYxNDAyBgNVBAMMK29wZW5z
+      aGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE2Mzc2NzIwMjYwggEiMA0GCSqG
+      SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCgyspE8X1T8RLez31wR//xNyx1OWJMyFha
+      NbaDgIsGFgDigbX9M0iPhi1rTvd6qs9eEjKmWw7f1LdGxrrVoQshN+og6Hky9K+W
+      rPA3E3MI9OEKZj0jOD9uW2kkFCG1ddTPXUn/owUCe0vfhKoMdtDLZQjYZ6e3qZws
+      GoMvoksBZmjT5aaek9GyuKAB2ygoAmuxA6zeei41D1ADZWgChxoKbuCQ6dXoSwpq
+      RBYjk9Yj8foyz67LyvD943sXnjOXvXm1SYtd8YxP17MMXgkkTuaYDUNKYjE132qm
+      vibEROwC+3FZvETjEbj0Z05nkHCgBtSrDsN1KlcHMVa16e9RbAZvAgMBAAGjYzBh
+      MA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTrhg6L
+      WHitfANggFat4RjejaHu3zAfBgNVHSMEGDAWgBTrhg6LWHitfANggFat4RjejaHu
+      3zANBgkqhkiG9w0BAQsFAAOCAQEAYnc1k250v08FTUtUkaM+Z3Flbf3fxBufA1UY
+      pY8NNr1ZiY+0WJbChoG92e5IGO7MdX7DF9spv0uFDrl3x6DKvOAj2oVEkA/2mIRV
+      74lu2afqMLZ7n/hqAF+rM+DrO39q0AEJOYLpenXaHC+NGZaq+fOkeoD/ultYPvyS
+      yukMMxpSLhjd5QGikswqg14MnOWdBmbN+7EH2rDBgKykuvM4SEzWPKxmI9G2j8Bd
+      40Y1JK+Q+GcdOAL0qYVg+xxE7RMP0PZIS86wGh69/7k++ChSvKbvbLr5KA7mGFj3
+      btdedvMC8yT6c9Vxu+zIoVwf9zFxrTbd9ArDbp4UmRqS/MRklA==
+      -----END CERTIFICATE-----
   wildcardPolicy: None
 
