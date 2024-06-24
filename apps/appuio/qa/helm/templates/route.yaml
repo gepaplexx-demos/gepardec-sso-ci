@@ -15,36 +15,36 @@ spec:
   tls:
     termination: reencrypt
     insecureEdgeTerminationPolicy: Allow
-    destinationCACertificate: |-
-      -----BEGIN CERTIFICATE-----
-      MIIFJjCCAw4CCQDdE0vf6Z5eTzANBgkqhkiG9w0BAQsFADBVMQswCQYDVQQGEwJB
-      VDEPMA0GA1UECAwGVmllbm5hMQ8wDQYDVQQHDAZWaWVubmExETAPBgNVBAoMCEdl
-      cGFyZGVjMREwDwYDVQQDDAhHZXBhcmRlYzAeFw0yNDA2MjAwODA0MzdaFw0yNTA2
-      MjAwODA0MzdaMFUxCzAJBgNVBAYTAkFUMQ8wDQYDVQQIDAZWaWVubmExDzANBgNV
-      BAcMBlZpZW5uYTERMA8GA1UECgwIR2VwYXJkZWMxETAPBgNVBAMMCEdlcGFyZGVj
-      MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA53l+LcMJ8kCh/TAL15cU
-      12MI6QFx8yiX11wyrYbiFo0/imu26aq5nstvzGcX0LO/wiGPHDOenhFBicm5jcPJ
-      KFBfij5abn12BcOLk7+/XKmMyWlIV5GZVIw+8KfSP/Itjr1YOeA2CSIqh4F5c0A/
-      fTcVb+yQGzAcicTx5CIrist5Y8CqfhXQEP33Pu9BadQLuZ+sVAR8no89yxcdkVNP
-      ft3lGDXDZSrYCXmkF69MqMC2rUC6KilS84AgYkKa4ck+AjLp3NTEbYaz1x+3Joza
-      Q+wlhC7+KmiokP6pkot2r84UHEGNzp8+e6ITi58rBGHoq5XHDc1VNyFoUJTK6cwK
-      UIXsxl1M+/tIJBjadZ6LonfnE4ILq7Ny57WLh2sj8ZGvkjM6B61MEiWot6Vga2TK
-      qbXDR9mX5WaVzjV266RG88gamHIcmJbOGU2B2xvc75dsfDNT1z6oxPJIxiAFAbje
-      ndn4pf6LA7ishcOjpUQ/JeWu+RnqLkdNW438fpex/GjZAaSDHk1HUkNwB8mcpzMK
-      pq+19VObeLkURfxNIcOULgcDfhKj6zxDSh5qT93Ov41gskukx7x1DBma4PBPJ+qr
-      Cq4svx/p3P9XqCRxT/uv7kqFuUFblaCueEYqFMpEKVCA8/+4QGRaKqaFqP9dzsJc
-      jn+dJ9htQEsawONpl97ecn8CAwEAATANBgkqhkiG9w0BAQsFAAOCAgEANLzXiu0W
-      uiS4x/2QSAaGpsej48rXNQ1RgtmEODOyl3P9igAajMK89tjK19sCigK1tRk3Kl7l
-      ATCRIAk5We97LYQU6zBJktu4fp3iLHz8uuUIaYGy/f/hkvTXZFkwidjcumcGPkAI
-      zGTeXsRg6aIzrhRDc93HUiU3+Q6QwidvV3aPwBPJv/jjXQqBaGIo1lBpsRaen2qe
-      PKKExLn84qreqSBnxq2uAdrZUtl01XsDgPBkb+efc4+DhEZ2349v0ifznXYsj+ta
-      MhGjz98+1ckVsv971zTx53pBXxL2jB9K894Eo2kDVrme2Drdoiqm1r/quLEFXZmp
-      YVZdCvACwfvlxE0Ug4B1AcyF1cJM+FTGoLbfgQvsRUETC6rVW/EMyI0IHioxSNHg
-      UGXSwwbqTutOVEV6bJnMJukx1FLa/d/cT5VaDlTofYkmMinTNGjZJ16WBEaMOm6I
-      +/5qP4gXuhqMpPFmBoDekRyQS/zGG9ss6Ccog2t+kzfgWmvpoOMcbauE09Ai3T10
-      Qv2/lGvbZW4bzOUBbgbsPFfE/2Tqoobw+rTxJADeKvl+tbeCKaBUeUc9PdvBc8O1
-      DP45NIO9v/r3d7AYTf/qLKcznfypzkeSsUi1uzT8/xUvpIWJO7Uvs+oAJKfOketk
-      2D2mqleyBzzDT01qMe3d5Rx1X00sxMk+KSY=
-      -----END CERTIFICATE-----
+{{/*    destinationCACertificate: |-*/}}
+{{/*      -----BEGIN CERTIFICATE-----*/}}
+{{/*      MIIFJjCCAw4CCQDdE0vf6Z5eTzANBgkqhkiG9w0BAQsFADBVMQswCQYDVQQGEwJB*/}}
+{{/*      VDEPMA0GA1UECAwGVmllbm5hMQ8wDQYDVQQHDAZWaWVubmExETAPBgNVBAoMCEdl*/}}
+{{/*      cGFyZGVjMREwDwYDVQQDDAhHZXBhcmRlYzAeFw0yNDA2MjAwODA0MzdaFw0yNTA2*/}}
+{{/*      MjAwODA0MzdaMFUxCzAJBgNVBAYTAkFUMQ8wDQYDVQQIDAZWaWVubmExDzANBgNV*/}}
+{{/*      BAcMBlZpZW5uYTERMA8GA1UECgwIR2VwYXJkZWMxETAPBgNVBAMMCEdlcGFyZGVj*/}}
+{{/*      MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA53l+LcMJ8kCh/TAL15cU*/}}
+{{/*      12MI6QFx8yiX11wyrYbiFo0/imu26aq5nstvzGcX0LO/wiGPHDOenhFBicm5jcPJ*/}}
+{{/*      KFBfij5abn12BcOLk7+/XKmMyWlIV5GZVIw+8KfSP/Itjr1YOeA2CSIqh4F5c0A/*/}}
+{{/*      fTcVb+yQGzAcicTx5CIrist5Y8CqfhXQEP33Pu9BadQLuZ+sVAR8no89yxcdkVNP*/}}
+{{/*      ft3lGDXDZSrYCXmkF69MqMC2rUC6KilS84AgYkKa4ck+AjLp3NTEbYaz1x+3Joza*/}}
+{{/*      Q+wlhC7+KmiokP6pkot2r84UHEGNzp8+e6ITi58rBGHoq5XHDc1VNyFoUJTK6cwK*/}}
+{{/*      UIXsxl1M+/tIJBjadZ6LonfnE4ILq7Ny57WLh2sj8ZGvkjM6B61MEiWot6Vga2TK*/}}
+{{/*      qbXDR9mX5WaVzjV266RG88gamHIcmJbOGU2B2xvc75dsfDNT1z6oxPJIxiAFAbje*/}}
+{{/*      ndn4pf6LA7ishcOjpUQ/JeWu+RnqLkdNW438fpex/GjZAaSDHk1HUkNwB8mcpzMK*/}}
+{{/*      pq+19VObeLkURfxNIcOULgcDfhKj6zxDSh5qT93Ov41gskukx7x1DBma4PBPJ+qr*/}}
+{{/*      Cq4svx/p3P9XqCRxT/uv7kqFuUFblaCueEYqFMpEKVCA8/+4QGRaKqaFqP9dzsJc*/}}
+{{/*      jn+dJ9htQEsawONpl97ecn8CAwEAATANBgkqhkiG9w0BAQsFAAOCAgEANLzXiu0W*/}}
+{{/*      uiS4x/2QSAaGpsej48rXNQ1RgtmEODOyl3P9igAajMK89tjK19sCigK1tRk3Kl7l*/}}
+{{/*      ATCRIAk5We97LYQU6zBJktu4fp3iLHz8uuUIaYGy/f/hkvTXZFkwidjcumcGPkAI*/}}
+{{/*      zGTeXsRg6aIzrhRDc93HUiU3+Q6QwidvV3aPwBPJv/jjXQqBaGIo1lBpsRaen2qe*/}}
+{{/*      PKKExLn84qreqSBnxq2uAdrZUtl01XsDgPBkb+efc4+DhEZ2349v0ifznXYsj+ta*/}}
+{{/*      MhGjz98+1ckVsv971zTx53pBXxL2jB9K894Eo2kDVrme2Drdoiqm1r/quLEFXZmp*/}}
+{{/*      YVZdCvACwfvlxE0Ug4B1AcyF1cJM+FTGoLbfgQvsRUETC6rVW/EMyI0IHioxSNHg*/}}
+{{/*      UGXSwwbqTutOVEV6bJnMJukx1FLa/d/cT5VaDlTofYkmMinTNGjZJ16WBEaMOm6I*/}}
+{{/*      +/5qP4gXuhqMpPFmBoDekRyQS/zGG9ss6Ccog2t+kzfgWmvpoOMcbauE09Ai3T10*/}}
+{{/*      Qv2/lGvbZW4bzOUBbgbsPFfE/2Tqoobw+rTxJADeKvl+tbeCKaBUeUc9PdvBc8O1*/}}
+{{/*      DP45NIO9v/r3d7AYTf/qLKcznfypzkeSsUi1uzT8/xUvpIWJO7Uvs+oAJKfOketk*/}}
+{{/*      2D2mqleyBzzDT01qMe3d5Rx1X00sxMk+KSY=*/}}
+{{/*      -----END CERTIFICATE-----*/}}
   wildcardPolicy: None
 
