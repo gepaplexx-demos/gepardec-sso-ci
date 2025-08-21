@@ -64,6 +64,10 @@ affinity: {}
 
 postgresql:
   fullnameOverride: postgresql-keycloak
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+    tag: 16.1.0-debian-11-r25
   service:
     ports:
       postgresql: 5432
